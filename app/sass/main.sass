@@ -1,0 +1,194 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: $default-font
+	overflow-x: hidden
+	opacity: 1
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+.wrap-tab
+	position: relative
+	width: 100%
+	.tab
+		display: inline-block
+		position: relative
+		width: 25%
+		border: 1px solid green
+		z-index: 5
+		text-align: center
+	.tab-content
+		width: 100%
+		position: relative
+		border: 1px solid green
+		z-index: 1
+		border-radius: 0px 0px 3px 3px 
+		top: -1px
+.wrap-tab .tab.active
+	border-bottom: 1px solid #fff
+	border-radius: 3px 3px 0px 0px 
+.hidden
+	display: none
+.show
+	display: block
+.button	
+	display: inline-block
+	border-radius: 5px 
+	background-color: #cccccc
+	padding: 15px 40px 
+	text-transform: uppercase
+.modal	
+	position: fixed
+	display: none
+	width: 100%
+	height: 100%
+	background-color: rgba(0, 0, 0, .5);
+	z-index: 1000
+	.allert
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+		background-color: #fff
+		h1
+			font-size: 30px 
+			padding: 30px 60px
+
+
+.slider
+	position: relative
+	width: 50%
+	.mySlide
+		max-width: 100%
+		img
+			width: 100%
+	.prev, .next
+		position: absolute
+		top: 50%
+		padding: 15px 
+		background-color: #717171
+		cursor: pointer
+		transition: all 0.5s ease
+		border-radius: 3px 0px 0px 3px
+		&:hover
+			background-color: rgba(#717171, .5)
+			transition: all 0.5s ease
+		.fa
+			color: #fff
+			font-size: 20px
+	.prev
+		left: 0px 
+	.next
+		right: 0px
+	.dots
+		position: absolute
+		bottom: 0
+		left: 50%
+		transform: translateX(-50%)
+		.dot
+			width: 10px 
+			height: 10px 
+			border-radius: 50%
+			//background-color: #FFF
+			background-color: #fff
+			display: inline-block
+			margin: 0px 5px 
+			&.active
+				background-color: #000
+.fade
+	animation-name: fade
+	animation-duration: 2s
+@keyframes fade
+	from
+		opacity: 0.1
+	to
+		opacity: 1
+
+.parent
+	display: flex
+	margin: 50px 
+	flex-direction: row
+	width: 150px 
+	height: 500px
+	flex-wrap: wrap
+	justify-content: center
+	.child
+		width: 50px 
+		height: 50px 
+		background-color: red
+		margin: 10px 
+		font-size: 20px 
+		color: #fff
+		line-height: 50px 
+		text-align: center	
+		align-item: center
+		&.second
+			order: -1
+			background-color: yellow
+
+.gallery
+	padding: .5vw
+	display: flex
+	//flex-direction: column
+	//flex-wrap: wrap
+	flex-flow: row wrap
+	
+	.item-gallery
+		flex: auto
+		width: 275px
+		padding: .5vw
+		img
+			width: 100%
+			height: auto
+			&:hover
+				opacity: 1
+				transition: all 0.5s ease
+			
+.gallery:hover img
+	opacity:  .5
+	transition: all 0.5s ease
+
+@import "media" // Всегда в конце
